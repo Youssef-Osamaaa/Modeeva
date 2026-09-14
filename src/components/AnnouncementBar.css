@@ -1,0 +1,12 @@
+.announcement-bar {
+    background-color: #0b7c7e;
+    color: #ffffff;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.announcement-bar .btn-close {
+    font-size: 10px;
+    opacity: 0.85;
+}

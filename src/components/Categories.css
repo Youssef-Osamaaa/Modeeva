@@ -1,0 +1,23 @@
+.categories-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    height: 900px;
+    padding: 40px;
+}
+
+.cat-top-left {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.cat-bottom-left {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.cat-right {
+    grid-column: 2;
+    grid-row: 1 / 3;
+}

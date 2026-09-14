@@ -1,0 +1,92 @@
+/* src/components/ReviewsSlider.css */
+
+.reviews-section {
+    position: relative;
+    background: #f5f5f5;
+    padding: 50px 40px;
+    margin: 0 40px -80px;
+    /* المسافة الجانبية (40px) + الـ overlap مع الفوتر (-80px) */
+    z-index: 1;
+}
+
+.reviews-track-wrapper {
+    overflow: hidden;
+}
+
+.reviews-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.4s ease;
+}
+
+.review-card {
+    background: #ffffff;
+    padding: 25px;
+    min-width: calc(25% - 15px);
+    flex-shrink: 0;
+}
+
+.review-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+    position: relative;
+    padding-right: 60px;
+}
+
+.review-avatar {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    background: #4a1010;
+}
+
+.review-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.review-date {
+    font-size: 0.75rem;
+    color: #888;
+    margin: 0;
+}
+
+.review-stars {
+    position: absolute;
+    right: 0;
+    top: 4px;
+    color: #f5a623;
+    font-size: 0.85rem;
+}
+
+.review-text {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffffff;
+    border: 1px solid #ddd;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.slider-btn-left {
+    left: 10px;
+}
+
+.slider-btn-right {
+    right: 10px;
+}

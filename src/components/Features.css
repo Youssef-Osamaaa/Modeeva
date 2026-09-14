@@ -1,0 +1,27 @@
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+    padding: 60px 40px;
+}
+
+.feature-left {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+.feature-top-mid {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.feature-bottom-mid {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.feature-right {
+    grid-column: 3;
+    grid-row: 1 / 3;
+}
