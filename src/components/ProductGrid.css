@@ -63,3 +63,16 @@
     padding: 12px 24px;
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+    .product-grid-title {
+        font-size: 1.6rem;
+    }
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .product-grid-section {
+        padding: 20px;
+    }
+}
