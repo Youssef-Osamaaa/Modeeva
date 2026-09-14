@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Modeeva/static/css/main.79cf86ea.css",
+    "main.css": "/Modeeva/static/css/main.dad53963.css",
     "main.js": "/Modeeva/static/js/main.aa31b1db.js",
     "static/media/1.jpg": "/Modeeva/static/media/1.1149265a971e7b2a69dc.jpg",
     "static/media/5.jpg": "/Modeeva/static/media/5.3deaabb6ebd299ce808a.jpg",
@@ -10,11 +10,11 @@
     "static/media/bootstrap-icons.woff2?": "/Modeeva/static/media/bootstrap-icons.92ea18a81d737146ff04.woff2",
     "static/media/2.jpg": "/Modeeva/static/media/2.78430261a5de9b6985bb.jpg",
     "index.html": "/Modeeva/index.html",
-    "main.79cf86ea.css.map": "/Modeeva/static/css/main.79cf86ea.css.map",
+    "main.dad53963.css.map": "/Modeeva/static/css/main.dad53963.css.map",
     "main.aa31b1db.js.map": "/Modeeva/static/js/main.aa31b1db.js.map"
   },
   "entrypoints": [
-    "static/css/main.79cf86ea.css",
+    "static/css/main.dad53963.css",
     "static/js/main.aa31b1db.js"
   ]
 }
