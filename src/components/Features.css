@@ -25,3 +25,19 @@
     grid-column: 3;
     grid-row: 1 / 3;
 }
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        padding: 20px;
+        gap: 15px;
+    }
+    .feature-left,
+    .feature-top-mid,
+    .feature-bottom-mid,
+    .feature-right {
+        grid-column: 1;
+        grid-row: auto;
+    }
+}

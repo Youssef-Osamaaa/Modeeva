@@ -5,12 +5,12 @@
     background: #f5f5f5;
     padding: 50px 40px;
     margin: 0 40px -80px;
-    /* المسافة الجانبية (40px) + الـ overlap مع الفوتر (-80px) */
     z-index: 1;
 }
 
 .reviews-track-wrapper {
     overflow: hidden;
+    padding: 0 30px;
 }
 
 .reviews-track {
@@ -22,8 +22,9 @@
 .review-card {
     background: #ffffff;
     padding: 25px;
-    min-width: calc(25% - 15px);
+    width: calc(25% - 15px);
     flex-shrink: 0;
+    box-sizing: border-box;
 }
 
 .review-header {
@@ -89,4 +90,21 @@
 
 .slider-btn-right {
     right: 10px;
+}
+
+@media (max-width: 768px) {
+    .reviews-section {
+        background: transparent;
+        margin: 0 20px -60px;
+        padding: 30px 0;
+    }
+    .reviews-track-wrapper {
+        padding: 0;
+    }
+    .review-card {
+        width: 100%;
+    }
+    .footer {
+        padding-top: 90px;
+    }
 }

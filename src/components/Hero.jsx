@@ -11,15 +11,18 @@ function Hero() {
       <div className="hero-overlay">
         <p className="hero-subtitle">MADE IN INDONESIA, DEDICATED TO INDONESIA</p>
         <h1 className="hero-title">
-          DISCOVER THE ART<br />OF DRESSING UP
+          DISCOVER THE ART OF<br />DRESSING UP
         </h1>
       </div>
 
-      <p className="hero-scroll">SCROLL DOWN ⌄</p>
+      <div className="hero-scroll">
+        <span>SCROLL DOWN</span>
+        <i className="bi bi-chevron-down"></i>
+      </div>
 
       <div className="hero-products">
-        <ProductCard name="Product Name in Here" price="$300.000" image={productImg} />
-        <ProductCard name="Product Name in Here" price="$300.000" image={productImg} reverse />
+        <ProductCard name={<>Product Name<br />in Here</>} price="$300.000" image={productImg} />
+        <ProductCard name={<>Product Name<br />in Here</>} price="$300.000" image={productImg} reverse />
       </div>
     </div>
   );

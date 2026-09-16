@@ -55,7 +55,7 @@ function Navbar() {
             <i className="bi bi-person icon"></i>
           </a>
           <a href="/" className="icon-link">
-            <i className="bi bi-bag icon"></i>
+            <i className="bi bi-cart3 icon"></i>
           </a>
 
           <button

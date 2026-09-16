@@ -64,6 +64,10 @@
     cursor: pointer;
 }
 
+.grid-card {
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
     .product-grid-title {
         font-size: 1.6rem;
