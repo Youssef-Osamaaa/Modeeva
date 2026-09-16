@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './ReviewsSlider.css';
 
 const reviews = [
@@ -13,13 +13,37 @@ const reviews = [
 
 function ReviewsSlider() {
   const [startIndex, setStartIndex] = useState(0);
+  const [visibleCards, setVisibleCards] = useState(4);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setVisibleCards(1);
+      } else if (window.innerWidth <= 992) {
+        setVisibleCards(2);
+      } else {
+        setVisibleCards(4);
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const maxIndex = Math.max(0, reviews.length - visibleCards);
+
+  useEffect(() => {
+    if (startIndex > maxIndex) {
+      setStartIndex(maxIndex);
+    }
+  }, [maxIndex, startIndex]);
 
   const nextSlide = () => {
-    setStartIndex((prev) => (prev + 1) % reviews.length);
+    setStartIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
   };
 
   const prevSlide = () => {
-    setStartIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
+    setStartIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
   };
 
   return (
@@ -27,7 +51,7 @@ function ReviewsSlider() {
       <div className="reviews-track-wrapper">
         <div
           className="reviews-track"
-          style={{ transform: `translateX(-${startIndex * 25}%)` }}
+          style={{ transform: `translateX(calc(-${startIndex} * ((100% + 20px) / ${visibleCards})))` }}
         >
           {reviews.map((review, i) => (
             <div className="review-card" key={i}>
@@ -45,8 +69,8 @@ function ReviewsSlider() {
         </div>
       </div>
 
-      <button className="slider-btn slider-btn-left" onClick={prevSlide}>‹</button>
-      <button className="slider-btn slider-btn-right" onClick={nextSlide}>›</button>
+      <button className="slider-btn slider-btn-left" onClick={prevSlide} aria-label="Previous review">‹</button>
+      <button className="slider-btn slider-btn-right" onClick={nextSlide} aria-label="Next review">›</button>
     </div>
   );
 }
