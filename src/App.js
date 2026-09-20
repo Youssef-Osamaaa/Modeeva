@@ -1,27 +1,18 @@
-import AnnouncementBar from './components/AnnouncementBar';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Categories from './components/Categories';
-import ProductGrid from './components/ProductGrid';
-import Features from './components/Features';
-import Footer from './components/Footer';
-import ReviewsSlider from './components/ReviewsSlider';
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import { ProductProvider } from './context/ProductContext';
+import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
-    <div>
-      <AnnouncementBar />
-      <div className="hero-section position-relative">
-        <Navbar />
-        <Hero />
-      </div>
-      <Categories />
-      <ProductGrid title="THE BEST DRESS FOR THE BEST WOMAN" category="Women" />
-      <ProductGrid title="BEST OUTFIT FOR YOUR HAPPINESS" category="Men" />
-      <Features />
-      <ReviewsSlider />
-      <Footer />
-    </div>
+    <ProductProvider>
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </HashRouter>
+    </ProductProvider>
   );
 }
 

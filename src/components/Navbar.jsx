@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
@@ -7,9 +8,9 @@ function Navbar() {
   return (
     <nav className="custom-navbar py-3">
       <div className="container-fluid px-lg-5 d-flex justify-content-between align-items-center">
-        <a className="navbar-brand logo m-0" href="/">
+        <Link className="navbar-brand logo m-0" to="/">
           <span className="logo-teal">M</span>ODEVA
-        </a>
+        </Link>
 
         <ul className="nav-links d-none d-lg-flex list-unstyled mb-0 align-items-center gap-4">
           <li>
@@ -36,9 +37,9 @@ function Navbar() {
             </a>
           </li>
           <li>
-            <a href="/" className="nav-link-item">
+            <Link to="/dashboard" className="nav-link-item">
               Dashboard
-            </a>
+            </Link>
           </li>
         </ul>
 
@@ -90,9 +91,9 @@ function Navbar() {
             </a>
           </li>
           <li>
-            <a href="/" className="nav-link-item">
+            <Link to="/dashboard" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>
               Dashboard
-            </a>
+            </Link>
           </li>
         </ul>
       )}
