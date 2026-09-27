@@ -16,13 +16,33 @@ function Dashboard() {
     image: '',
   });
 
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      if (file.size > 2 * 1024 * 1024) {
+        Swal.fire({
+          title: 'Image too large',
+          text: 'Please select an image smaller than 2MB.',
+          icon: 'warning',
+          confirmButtonColor: '#0b7c7e',
+        });
+        return;
+      }
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFormData((prev) => ({ ...prev, image: reader.result }));
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleOpenAdd = () => {
     setEditingProduct(null);
     setFormData({
       name: '',
       category: 'Women',
       price: '$150.000',
-      image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600',
+      image: '',
     });
     setIsFormOpen(true);
   };
@@ -66,6 +86,16 @@ function Dashboard() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!formData.image) {
+      Swal.fire({
+        title: 'Image Required',
+        text: 'Please select an image file from your PC.',
+        icon: 'warning',
+        confirmButtonColor: '#0b7c7e',
+      });
+      return;
+    }
 
     if (editingProduct) {
       updateProduct(editingProduct.id, formData);
@@ -173,15 +203,31 @@ function Dashboard() {
                 </div>
 
                 <div className="mb-4">
-                  <label className="form-label">Image URL</label>
+                  <label className="form-label">Product Image (Upload from PC)</label>
                   <input
-                    type="url"
-                    required
+                    type="file"
+                    accept="image/*"
                     className="form-control"
-                    value={formData.image}
-                    onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                    placeholder="https://images.unsplash.com/..."
+                    required={!formData.image}
+                    onChange={handleImageChange}
                   />
+                  {formData.image && (
+                    <div className="mt-2 d-flex align-items-center gap-3 p-2 bg-light rounded border">
+                      <img
+                        src={formData.image}
+                        alt="Preview"
+                        className="product-preview-img"
+                      />
+                      <div>
+                        <p className="mb-0 small fw-bold text-success">
+                          <i className="bi bi-check-circle me-1"></i> Image Selected
+                        </p>
+                        <span className="text-muted small">
+                          {editingProduct ? 'Choose a new file to change this image' : 'Ready to save'}
+                        </span>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <div className="d-flex justify-content-end gap-2">

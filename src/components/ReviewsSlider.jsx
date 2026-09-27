@@ -69,8 +69,8 @@ function ReviewsSlider() {
         </div>
       </div>
 
-      <button className="slider-btn slider-btn-left" onClick={prevSlide} aria-label="Previous review">‹</button>
-      <button className="slider-btn slider-btn-right" onClick={nextSlide} aria-label="Next review">›</button>
+      <button className="slider-btn slider-btn-left" onClick={prevSlide} aria-label="Previous review"></button>
+      <button className="slider-btn slider-btn-right" onClick={nextSlide} aria-label="Next review"></button>
     </div>
   );
 }
