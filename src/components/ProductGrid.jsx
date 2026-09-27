@@ -5,17 +5,18 @@ function ProductGrid({ title, category }) {
   const { products, loading } = useProducts();
 
   const filteredProducts = products.filter((p) => p.category === category);
+  const displayedProducts = filteredProducts.slice(0, 4);
 
   return (
     <div className="product-grid-section">
       <h2 className="product-grid-title">{title}</h2>
       {loading ? (
         <div className="p-4 text-center text-muted">Loading collection...</div>
-      ) : filteredProducts.length === 0 ? (
+      ) : displayedProducts.length === 0 ? (
         <div className="p-4 text-muted">No products available in this category.</div>
       ) : (
         <div className="product-grid">
-          {filteredProducts.map((product, idx) => (
+          {displayedProducts.map((product, idx) => (
             <div key={product.id || idx} className="grid-card">
               <div className="grid-card-image-wrapper">
                 <img src={product.image} alt={product.name} />
