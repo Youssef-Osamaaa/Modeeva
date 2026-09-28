@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Modeeva/static/css/main.fba315b2.css",
-    "main.js": "/Modeeva/static/js/main.4b9cf109.js",
+    "main.js": "/Modeeva/static/js/main.0ec3d5f4.js",
     "static/media/1.jpg": "/Modeeva/static/media/1.1149265a971e7b2a69dc.jpg",
     "static/media/5.jpg": "/Modeeva/static/media/5.3deaabb6ebd299ce808a.jpg",
     "static/media/6.jpg": "/Modeeva/static/media/6.20a925db320a55583ec3.jpg",
@@ -11,10 +11,10 @@
     "static/media/2.jpg": "/Modeeva/static/media/2.78430261a5de9b6985bb.jpg",
     "index.html": "/Modeeva/index.html",
     "main.fba315b2.css.map": "/Modeeva/static/css/main.fba315b2.css.map",
-    "main.4b9cf109.js.map": "/Modeeva/static/js/main.4b9cf109.js.map"
+    "main.0ec3d5f4.js.map": "/Modeeva/static/js/main.0ec3d5f4.js.map"
   },
   "entrypoints": [
     "static/css/main.fba315b2.css",
-    "static/js/main.4b9cf109.js"
+    "static/js/main.0ec3d5f4.js"
   ]
 }
